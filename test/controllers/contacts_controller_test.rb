@@ -2,6 +2,8 @@ require 'test_helper'
 
 class ContactsControllerTest < ActionController::TestCase
   setup do
+        sign_in users(:steve)
+
     @contact = contacts(:one)
   end
 
@@ -12,11 +14,13 @@ class ContactsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    sign_in users(:steve)
     get :new
     assert_response :success
   end
 
   test "should create contact" do
+    sign_in users(:steve)
     assert_difference('Contact.count') do
       post :create, contact: { email: @contact.email }
     end
@@ -30,16 +34,19 @@ class ContactsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    sign_in users(:steve)
     get :edit, id: @contact
     assert_response :success
   end
 
   test "should update contact" do
+    sign_in users(:steve)
     patch :update, id: @contact, contact: { email: @contact.email }
     assert_redirected_to contact_path(assigns(:contact))
   end
 
   test "should destroy contact" do
+    sign_in users(:steve)
     assert_difference('Contact.count', -1) do
       delete :destroy, id: @contact
     end

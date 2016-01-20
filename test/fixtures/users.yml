@@ -4,8 +4,6 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+steve:
+  email: steve@steve.com
+  current_sign_in_at: <%= 5.hour.ago.to_s(:db) %>
