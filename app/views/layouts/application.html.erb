@@ -28,7 +28,7 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="/contacts">Contact List</a></li>
-	        <li><a href="#">Link</a></li>
+	        <li><a href="/custom_fields">Custom Fields</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="dropdown">
@@ -43,8 +43,18 @@
 	</nav>
 
 	<div class="container">
-		<p class="notice"><%= notice %></p>
-  	<p class="alert"><%= alert %></p>
+		<% if notice %>
+		  <div class="alert alert-success alert-dismissible margin-alert" role="alert">
+		    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		    <%= notice %>
+		  </div>
+		<% end %>
+		<% if alert %>
+		  <div class="alert alert-warning alert-dismissible margin-alert" role="alert">
+		    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		    <%= alert %>
+		  </div>
+		<% end %>
 		<%= yield %>
 	</div>
 
