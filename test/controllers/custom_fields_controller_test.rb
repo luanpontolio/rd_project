@@ -6,17 +6,20 @@ class CustomFieldsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    sign_in users(:steve)
     get :index
     assert_response :success
     assert_not_nil assigns(:custom_fields)
   end
 
   test "should get new" do
+    sign_in users(:steve)
     get :new
     assert_response :success
   end
 
   test "should create custom_field" do
+    sign_in users(:steve)
     assert_difference('CustomField.count') do
       post :create, custom_field: { description: @custom_field.description, type_field: @custom_field.type_field, value: @custom_field.value }
     end
@@ -30,16 +33,19 @@ class CustomFieldsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    sign_in users(:steve)
     get :edit, id: @custom_field
     assert_response :success
   end
 
   test "should update custom_field" do
+    sign_in users(:steve)
     patch :update, id: @custom_field, custom_field: { description: @custom_field.description, type_field: @custom_field.type_field, value: @custom_field.value }
     assert_redirected_to custom_field_path(assigns(:custom_field))
   end
 
   test "should destroy custom_field" do
+    sign_in users(:steve)
     assert_difference('CustomField.count', -1) do
       delete :destroy, id: @custom_field
     end
