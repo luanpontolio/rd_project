@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>User</th>
       <th>Description</th>
       <th>Type field</th>
       <th>Value</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @custom_fields.each do |custom_field| %>
       <tr>
+        <td><%= custom_field.user.email %></td>
         <td><%= custom_field.description %></td>
         <td><%= custom_field.type_field %></td>
         <td><%= custom_field.value %></td>

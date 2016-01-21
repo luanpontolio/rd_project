@@ -2,8 +2,6 @@ require 'test_helper'
 
 class ContactsControllerTest < ActionController::TestCase
   setup do
-        sign_in users(:steve)
-
     @contact = contacts(:one)
   end
 

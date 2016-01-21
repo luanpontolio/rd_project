@@ -1,10 +1,11 @@
 class CustomFieldsController < ApplicationController
   before_action :set_custom_field, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /custom_fields
   # GET /custom_fields.json
   def index
-    @custom_fields = CustomField.all
+    @custom_fields = current_user.custom_fields.all
   end
 
   # GET /custom_fields/1
@@ -14,7 +15,7 @@ class CustomFieldsController < ApplicationController
 
   # GET /custom_fields/new
   def new
-    @custom_field = CustomField.new
+    @custom_field = current_user.custom_fields.build
   end
 
   # GET /custom_fields/1/edit
@@ -24,7 +25,7 @@ class CustomFieldsController < ApplicationController
   # POST /custom_fields
   # POST /custom_fields.json
   def create
-    @custom_field = CustomField.new(custom_field_params)
+    @custom_field = current_user.custom_fields.build(custom_field_params)
 
     respond_to do |format|
       if @custom_field.save
