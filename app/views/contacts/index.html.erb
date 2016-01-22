@@ -20,9 +20,14 @@
           <td><%= link_to 'Edit', edit_contact_path(contact), :class => 'btn btn-primary' %></td>
           <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
         </tr>
+        <%= hidden_field_tag :contact_type_id, contact.inspect %>
       <% end %>
     </tbody>
   </table>
 </div>
 <br/>
-<%= link_to 'New Contact', new_contact_path, :class => "btn btn-default" %>
+
+<%= form_tag new_contact_path, method: :get do %>
+  <%= select_tag :contact_type_id, options_from_collection_for_select(current_user.contact_types.all, :id, :name) %>
+  <%= submit_tag "New Contact", name: nil, :class => "btn btn-default" %>
+<% end -%>

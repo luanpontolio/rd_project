@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :contacts
-  has_many :custom_fields
+  has_many :contact_types
 end

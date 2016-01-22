@@ -15,11 +15,12 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-    @contact = current_user.contacts.build
+    @contact = current_user.contacts.build(contact_type_id: params[:contact_type_id])
   end
 
   # GET /contacts/1/edit
   def edit
+    @contact = current_user.contacts.find(params[:id])
   end
 
   # POST /contacts
@@ -70,6 +71,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:email)
+      params.require(:contact).permit(:email, :contact_type => [:properties, :contact_type_id])
     end
 end

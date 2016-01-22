@@ -1,0 +1,8 @@
+<fieldset>
+  <%= f.select :field_type, %w[text_field text_area select] %>
+  <%= f.text_field :name, placeholder: "Field Name" %>
+  <%= f.check_box :required %> <%= f.label :required %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove", "#", class: "remove_fields btn btn-warning"%>
+	<br/>
+</fieldset>
