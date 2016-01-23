@@ -4,8 +4,20 @@ This application was developed in Ruby 2.2.1 and Rails 4.2.5.
 
 == Introduction
 
-== Specifications
+This project allows you to create a list of contacts for your company and also the creation and manipulation of custom fields for the existing contacts.
 
 == Running the application
 
+To run this application locally, it is necessary to copy it to your system. It can be done following this sequence:
+
+ git clone https://github.com/luanpontolio/rd_project.git
+ cd rd_project
+ bundle install
+ rake db:create
+ rake db:migrate
+ rails s -b PORT
+
 == Access
+
+Access the application on HEROKU by clicking Here[http://rdproject.herokuapp.com].
+
