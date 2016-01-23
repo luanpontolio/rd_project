@@ -23,13 +23,18 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <%= f.fields_for :properties, OpenStruct.new(@contact.properties) do |builder| %>
-      <% @contact.contact_type.fields.each do |field| %>
-        <%= render "contacts/fields/#{field.field_type}", field: field, f: builder %>
+  <% if @contact.contact_type.present? %>
+    <div class="form-group">
+      <%= f.fields_for :properties, OpenStruct.new(@contact.properties) do |builder| %>
+        <% @contact.contact_type.fields.each do |field| %>
+          <%= render "contacts/fields/#{field.field_type}", field: field, f: builder %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+    <a href="/contact_types" class="btn btn-primary btn-lg btn-block">Create Fields</a>
+    <br/>
+  <% end %>
   <div class="form-group">
     <%= f.submit "Save", :class => "btn btn-success btn-lg btn-block" %>
   </div>

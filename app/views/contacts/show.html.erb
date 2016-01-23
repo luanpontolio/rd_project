@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<div class="panel panel-default">s
+<div class="panel panel-default">
   <div class="panel-body">
     <p>
 		  <strong>Email:</strong>
 		  <%= @contact.email %>
 		</p>
-	  <h4>More Informations</h4>
+	  <h4>Properties</h4>
 		<ul class="list-group">
 			<% @contact.properties.each do |name, value| %>
 			  <li class="list-group-item">

@@ -41,7 +41,6 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1
   # PATCH/PUT /contacts/1.json
   def update
-    puts contact_params
     respond_to do |format|
       if @contact.update_attributes(contact_params)
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
@@ -66,7 +65,7 @@ class ContactsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
-      @contact = current_user.contacts.find(params[:id])
+      @contact = Contact.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
