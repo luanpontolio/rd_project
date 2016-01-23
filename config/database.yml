@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: rd_project_production
-  username: rd_project
-  password: <%= ENV['RD_PROJECT_DATABASE_PASSWORD'] %>
+  # username: rd_project
+  # password: <%= ENV['RD_PROJECT_DATABASE_PASSWORD'] %>
