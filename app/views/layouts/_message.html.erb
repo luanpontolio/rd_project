@@ -1,0 +1,35 @@
+<% if @contact.present? %>
+  <% if @contact.errors.any? %>
+    <% @contact.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger alert-dismissible margin-alert" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% if @contact_type.present? %>
+  <% if @contact_type.errors.any? %>
+    <% @contact_type.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger alert-dismissible margin-alert" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% if notice %>
+  <div class="alert alert-success alert-dismissible margin-alert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="alert alert-warning alert-dismissible margin-alert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= alert %>
+  </div>
+<% end %>

@@ -70,6 +70,6 @@ class ContactTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_type_params
-      params.require(:contact_type).permit(:name, :fields_attributes => [:id, :field_type, :name, :required, :_destroy])
+      params.require(:contact_type).permit(:name, :fields_attributes => [:id, :field_type, :name, :required, :contact_type_id, :_destroy])
     end
 end
