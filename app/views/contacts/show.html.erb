@@ -3,14 +3,10 @@
 <p>
   <strong>Email:</strong>
   <%= @contact.email %>
+  <%= @contact.inspect %>
 </p>
 
-<% @contact.properties.each do |name, value| %>
-  <p>
-    <b><%= name.humanize %>:</b>
-    <%= value %>
-  </p>
-<% end %>
+
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>

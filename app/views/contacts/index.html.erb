@@ -2,32 +2,34 @@
 
 <h1>Listing Contacts</h1>
 
-<div class="table-responsive">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Email</th>
-        <th>User</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @contacts.each do |contact| %>
+<div class="col-md-12">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
         <tr>
-          <td><%= contact.email %></td>
-          <td><%= contact.user.email %></td>
-          <td><%= link_to 'Edit', edit_contact_path(contact), :class => 'btn btn-primary' %></td>
-          <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+          <th>Email</th>
+          <th>User</th>
+          <th colspan="2"></th>
         </tr>
-        <%= hidden_field_tag :contact_type_id, contact.inspect %>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<br/>
+      </thead>
 
-<%= form_tag new_contact_path, method: :get do %>
-  <%= select_tag :contact_type_id, options_from_collection_for_select(current_user.contact_types.all, :id, :name) %>
-  <%= submit_tag "New Contact", name: nil, :class => "btn btn-default" %>
-<% end -%>
+      <tbody>
+        <% @contacts.each do |contact| %>
+          <tr>
+            <td><%= contact.email %></td>
+            <td><%= contact.user.email %></td>
+            <td><%= link_to 'Edit', edit_contact_path(contact), :class => 'btn btn-primary' %></td>
+            <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br/>
+  <div class="form-inline form-group">
+    <%= form_tag new_contact_path, method: :get do %>
+      <%= select_tag :contact_type_id, options_from_collection_for_select(current_user.contact_types.all, :id, :name), :class=>"form-control" %>
+      <%= submit_tag "New Contact", name: nil, :class => "btn btn-success" %>
+    <% end -%>
+  </div>
+</div>
