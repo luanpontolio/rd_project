@@ -3,7 +3,7 @@
 	  <div class="panel-body">
 	    <div class="form-inline">
 			  <div class="form-group">
-				  <%= f.select :field_type, %w[text_field text_area select], { :class => "form-control" } %>
+				  <%= f.select :field_type, %w[text_field text_area], { :class => "form-control" } %>
 				  <%= f.text_field :name, placeholder: "Field Name", :class => "form-control" %>
 				  <%= f.check_box :required, :class => "form-control" %> <%= f.label :required %>
 				  <%= f.hidden_field :_destroy %>
