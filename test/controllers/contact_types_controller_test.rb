@@ -6,6 +6,7 @@ class ContactTypesControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    sign_in users(:steve)
     get :index
     assert_response :success
     assert_not_nil assigns(:contact_types)
@@ -27,6 +28,7 @@ class ContactTypesControllerTest < ActionController::TestCase
   end
 
   test "should show contact_type" do
+    sign_in users(:steve)
     get :show, id: @contact_type
     assert_response :success
   end

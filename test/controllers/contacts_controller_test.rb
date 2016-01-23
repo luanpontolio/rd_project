@@ -6,6 +6,7 @@ class ContactsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    sign_in users(:steve)
     get :index
     assert_response :success
     assert_not_nil assigns(:contacts)
@@ -27,6 +28,7 @@ class ContactsControllerTest < ActionController::TestCase
   end
 
   test "should show contact" do
+    sign_in users(:steve)
     get :show, id: @contact
     assert_response :success
   end

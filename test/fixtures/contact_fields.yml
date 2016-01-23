@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  field_type: MyString
-  required: false
-  contact_type_id: 
+  name: Phone Number
+  field_type: text_field
+  required: true
+  contact_type_id: 1
 
 two:
-  name: MyString
-  field_type: MyString
+  name: FeedBack
+  field_type: text_area
   required: false
-  contact_type_id: 
+  contact_type_id: 1

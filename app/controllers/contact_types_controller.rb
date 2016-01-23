@@ -1,6 +1,6 @@
 class ContactTypesController < ApplicationController
   before_action :set_contact_type, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
 
   # GET /contact_types
   # GET /contact_types.json
@@ -65,7 +65,7 @@ class ContactTypesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact_type
-      @contact_type = current_user.contact_types.find(params[:id])
+      @contact_type = ContactType.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

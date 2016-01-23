@@ -1,12 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-  <%= @contact.inspect %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p>
+		  <strong>Email:</strong>
+		  <%= @contact.email %>
+		</p>
+		<% @contact.properties.each do |name, value| %>
+		  <p>
+		    <b><%= name.humanize %>:</b>
+		    <%= value %>
+		  </p>
+		<% end %>
+  </div>
+	<div class="panel-action">
+		<%= link_to 'Edit', edit_contact_path(@contact), :class => "btn btn-primary" %> |
+		<%= link_to 'Back', contacts_path, :class => "btn btn-default" %>
+	</div>
+</div>
 
-
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>

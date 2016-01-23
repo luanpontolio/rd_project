@@ -2,6 +2,8 @@
 
 one:
   email: john@empresa1.com
+  contact_type: one
 
 two:
   email: steve@empresa2.com
+  contact_type: one
