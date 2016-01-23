@@ -1,21 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<div class="panel panel-default">
+<div class="panel panel-default">s
   <div class="panel-body">
     <p>
 		  <strong>Email:</strong>
 		  <%= @contact.email %>
 		</p>
-		<% @contact.properties.each do |name, value| %>
-		  <p>
-		    <b><%= name.humanize %>:</b>
-		    <%= value %>
-		  </p>
-		<% end %>
+	  <h4>More Informations</h4>
+		<ul class="list-group">
+			<% @contact.properties.each do |name, value| %>
+			  <li class="list-group-item">
+			    <b><%= name.humanize %>:</b>
+			    <%= value %>
+			  </li>
+			<% end %>
+		</ul>
+		<br>
+		<%= link_to 'Edit', edit_contact_path(@contact), :class => "btn btn-primary btn-block" %><br>
+		<%= link_to 'Back', contacts_path, :class => "btn btn-default btn-block" %>
   </div>
-	<div class="panel-action">
-		<%= link_to 'Edit', edit_contact_path(@contact), :class => "btn btn-primary" %> |
-		<%= link_to 'Back', contacts_path, :class => "btn btn-default" %>
-	</div>
 </div>
-

@@ -1,8 +1,15 @@
 <fieldset>
-  <%= f.select :field_type, %w[text_field text_area select] %>
-  <%= f.text_field :name, placeholder: "Field Name" %>
-  <%= f.check_box :required %> <%= f.label :required %>
-  <%= f.hidden_field :_destroy %>
-  <%= link_to "remove", "#", class: "remove_fields btn btn-warning"%>
-	<br/>
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    <div class="form-inline">
+			  <div class="form-group">
+				  <%= f.select :field_type, %w[text_field text_area select], { :class => "form-control" } %>
+				  <%= f.text_field :name, placeholder: "Field Name", :class => "form-control" %>
+				  <%= f.check_box :required, :class => "form-control" %> <%= f.label :required %>
+				  <%= f.hidden_field :_destroy %>
+				  <%= link_to "Remove", "#", class: "remove_fields btn btn-warning"%>
+			  </div>
+			</div>
+	  </div>
+	</div>
 </fieldset>
