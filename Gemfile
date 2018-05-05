@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.7.1'
 # Flexible authentication solution for Rails with Warden.
 gem 'devise', '~> 3.5', '>= 3.5.2'
 # Use SCSS for stylesheets
